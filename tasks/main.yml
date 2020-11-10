@@ -1,0 +1,34 @@
+---
+- name: Install zplug
+  package:
+    name: 
+      - zplug
+      - tmux 
+      - zsh
+    state: latest
+- name: Switch user shell (may need reboot)
+  user:
+    name: "{{ riv_myzsh_username }}"
+    shell: /usr/bin/zsh
+    state: present
+- name: Copy configuration files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ riv_myzsh_userhome }}"
+    mode: '0644'
+    owner: "{{ riv_myzsh_username }}"
+    group: "{{ riv_myzsh_groupname }}"
+    backup: yes
+  loop:
+    - "{{ role_path }}/files/.zshrc"
+    - "{{ role_path }}/files/.p10k.zsh"
+    - "{{ role_path }}/files/.tmux.conf"
+    - "{{ role_path }}/files/.tmux.conf.local"
+- name: Ensure a locale exists
+  locale_gen:
+    name: en_US.UTF-8
+    state: present
+
+  
+  
+

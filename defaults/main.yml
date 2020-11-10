@@ -1,0 +1,4 @@
+---
+riv_myzsh_username: j
+riv_myzsh_groupname: "{{ riv_myzsh_username }}"
+riv_myzsh_userhome: "/home/{{ riv_myzsh_username }}"
