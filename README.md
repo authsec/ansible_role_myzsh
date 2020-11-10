@@ -27,18 +27,19 @@ These parameters can be set, but will be derived.
 Dependencies
 ------------
 
--
+None
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
+```
   - hosts: servers
     become: true
     roles:
       - authsec.myzsh
-
+```
 License
 -------
 
