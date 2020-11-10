@@ -27,12 +27,7 @@ These parameters can be set, but will be derived.
 Dependencies
 ------------
 
-Depends on (see vars in meta/main.yml): 
-
-```
-  - src: dev-sec.ssh-hardening
-```
-
+-
 
 Example Playbook
 ----------------
