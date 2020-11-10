@@ -17,9 +17,6 @@ galaxy_info:
     - zsh
     - tmux
 
-dependencies:
-  - role: dev-sec.ssh-hardening
-    vars:
-      sftp_enabled: true
+dependencies: []
 
   
