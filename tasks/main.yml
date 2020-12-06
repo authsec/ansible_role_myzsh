@@ -1,16 +1,18 @@
 ---
-- name: Install zplug
+- name: Install required software
   package:
     name: 
       - zplug
       - tmux 
       - zsh
     state: latest
+  become: true
 - name: Switch user shell (may need reboot)
   user:
     name: "{{ riv_myzsh_username }}"
     shell: /usr/bin/zsh
     state: present
+  become: true
 - name: Copy configuration files
   copy:
     src: "{{ item }}"
@@ -28,3 +30,4 @@
   locale_gen:
     name: en_US.UTF-8
     state: present
+  become: true
